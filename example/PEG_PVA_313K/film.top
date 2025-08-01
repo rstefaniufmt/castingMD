@@ -1,0 +1,37 @@
+ Include forcefield parameters
+#include "./gromos54a7_atb.ff/forcefield.itp"
+
+
+
+; Include chain topologies
+#include "PEG.itp"
+#include "pva.itp"
+
+
+; Include water topology
+#include "./gromos54a7_atb.ff/spc.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+;include solvent topology
+#include "acetone.itp"
+
+
+; Include topology for ions
+#include "./gromos54a7_atb.ff/ions.itp"
+
+[ system ]
+; Name
+PEG-PVA Film  in water:acetone
+
+[ molecules ]
+; Compound        #mols
+PEG                  4
+PVA                  2
+ACTN                 300
+SOL             21810
