@@ -1,6 +1,6 @@
 # Casting MD: Molecular Dynamics Simulation of Polymer Film Formation via Solvent Evaporation
 
-This repository contains scripts and example files for performing molecular dynamics (MD) simulations of polymer films using GROMACS. The main focus is to model the **casting process**, i.e., the progressive evaporation of solvent in systems containing polymers such as PVA, PEG, and bioactive compounds like quercetin.
+This repository contains scripts and example files for performing molecular dynamics (MD) simulations of polymer films using GROMACS. The main focus is to model the **casting process**, i.e., the progressive evaporation of solvent in systems containing polymers such as Carbohydrates, PVA, PEG, and bioactive compounds like quercetin.
 
 ## 🔧 Project Structure
 
@@ -24,7 +24,7 @@ casting_md/
 
 ## 🚀 Running the Evaporation Simulation
 
-The evaporation is done in cycles, removing solvent molecules (e.g., water or acetone) that are **above a cutting plane along the Z axis** of the box. This mimics the progressive drying of the system.
+The evaporation is done in cycles, removing solvent molecules (e.g., water, ethanol or acetone) that are **above a cutting plane along the Z axis** of the box. This mimics the progressive drying of the system.
 
 ### 1. `evaporate.py` — Solvent removal script
 
@@ -56,7 +56,7 @@ MDP=md.mdp          # simulation parameters
 TOP=film.top        # initial topology
 GRO=npt.gro         # initial structure
 PYTHON=python3      # Python with MDAnalysis installed
-plane=1.00          # height fraction of box for removal
+plane=0.95          # height fraction of box for removal
 ```
 
 **Execution:**
