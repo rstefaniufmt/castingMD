@@ -85,4 +85,19 @@ At the end, you will have multiple structures `stepN_last.gro` with varying leve
 
 This script collection was developed for simulating polymer film formation via solvent evaporation, enabling controlled drying within molecular dynamics simulations.
 
+If you use this repository or its content, please cite:
+
+Stefani, R., & Luz, R. (2025). CastingMD: Solvent evaporation molecular dynamics for polymeric film formation (Version 1.0). https://doi.org/10.5281/zenodo.16728915
+
+@misc{stefani2025castingmd,
+  author       = {Stefani, Ricardo and Luz, Rudiere},
+  title        = {CastingMD: Solvent evaporation molecular dynamics for polymeric film formation},
+  year         = {2025},
+  publisher    = {Zenodo},
+  version      = {1.0},
+  doi          = {10.5281/zenodo.16728915},
+  url          = {https://doi.org/10.5281/zenodo.16728915}
+}
+
+
 ---
