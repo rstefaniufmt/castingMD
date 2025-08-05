@@ -1,16 +1,21 @@
 #!/usr/bin/env bash
 
 # ------------ CONFIGURATION ------------
-SEG_NS=1                      # Duration of each cycle (ns)
-CYCLES=20                     # Total number of cycles
-MDP=md.mdp                    # Production .mdp file
-TOP=film.top                  # Initial topology (adjusted after step 14)
-GRO=npt.gro                   # Final structure from step 14
-TPR=md.tpr 
-CPT=npt.cpt                   # Temporary TPR file
+source evaporate.conf
+
+#if not exists configuration, set default values
+
+SEG_NS="${SEG_NS:-1}"                      # Duration of each cycle (ns)
+CYCLES="${CYCLES:-20}"                     # Total number of cycles
+MDP="${MDP:-md.mdp}"                    # Production .mdp file
+TOP="${TOP:-film.top}"                  # Initial topology (adjusted after solvatation)
+GRO="${GRO:-npt.gro}"                  # Final structure from NPT and solvatation
+TPR="${TPR:-md.tpr}" 
+CPT="${CPT:-npt.cpt}"                   # Temporary CPT file
 PYTHON=python3                # Python with MDAnalysis installed
-plane=1.00
-LOG_FILE="evaporate.log"
+LOG_FILE="${LOG_FILE:-evaporate.log}"
+
+plane=1.00 #ONLY TO START THE VARIABLE
 
 # ------------ MAIN LOOP ------------
 for ((i=0; i<CYCLES; i++)); do
@@ -48,6 +53,7 @@ for ((i=0; i<CYCLES; i++)); do
                  
         # 3. Determine Z-height of the system
         echo ">>> Calculating new box height..." | tee -a "$LOG_FILE"
+        read boxX boxY boxZ <<< $(awk 'END {print $1, $2, $3}' "$GRO")
         zmax=$(tail -n 1 "$GRO" | awk '{print $3}')
 
         # 4. Safety check: ensure Z >= 2.89 nm (for default rlist of 1.2 nm)
@@ -69,7 +75,7 @@ for ((i=0; i<CYCLES; i++)); do
             
             # 5. Redefine box with new height
             echo ">>> Applying new Z box height = ${zmax} nm" | tee -a "$LOG_FILE"
-            gmx editconf -f step${prev_tag}_npt.gro -o newbox.gro -c -box 9.0 9.0 ${minZ}
+            gmx editconf -f step${prev_tag}_npt.gro -o newbox.gro -c -box ${boxX} ${boxY} ${minZ}
             # 6. Prepare for next cycle
             cp newbox.gro box_fixed_${prev_tag}.gro
             cp newbox.gro ${GRO}
@@ -100,7 +106,7 @@ for ((i=0; i<CYCLES; i++)); do
         gmx grompp -f ${MDP} -c ${GRO} -t ${CPT} -p ${TOP} -o step${tag}.tpr -maxwarn 10
     fi
    
-    # ------ Run MD ------
+    # 2. ------ Run MD ------
     gmx mdrun -deffnm step${tag} -v || { echo "Error in mdrun during cycle $i" | tee -a "$LOG_FILE"; exit 1; }
 
     # 3. Extract the last frame
@@ -118,6 +124,8 @@ for ((i=0; i<CYCLES; i++)); do
        
     # 3. Determine Z-height of the system
     echo ">>> Calculating new box height..." | tee -a "$LOG_FILE"
+    
+    read boxX boxY boxZ <<< $(awk 'END {print $1, $2, $3}' "$GRO")
     zmax=$(tail -n 1 "$GRO" | awk '{print $3}')
 
     # 4. Safety check: ensure Z >= 2.75 nm (for default rlist of 1.2 nm)
@@ -141,7 +149,7 @@ for ((i=0; i<CYCLES; i++)); do
         
         # 5. Redefine box with new height
         echo ">>> Applying new Z box height = ${zmax} nm" | tee -a "$LOG_FILE"
-        gmx editconf -f step${tag}_post.gro -o newbox.gro -c -box 9.0 9.0 ${minZ}
+        gmx editconf -f step${tag}_post.gro -o newbox.gro -c -box ${boxX} ${boxY} ${minZ}
         
         # 6. Prepare for next cycle
         cp newbox.gro box_fixed_${tag}.gro
@@ -189,12 +197,13 @@ minZ=2.75
 zsafe=$(echo "$zmax < $minZ" | bc -l)
 if [ "$zsafe" -eq 1 ]; then
     echo ">>> Calculated Z-height ($zmax nm) is too small. Correcting to ${minZ} nm"
+    read boxX boxY boxZ <<< $(awk 'END {print $1, $2, $3}' "$GRO")
     zmax=$minZ
     cp ${GRO} old_${GRO}
     
     # 5. Redefine box with new height
     echo ">>> Applying new Z box height = ${zmax} nm"
-    gmx editconf -f step19_post.gro -o newbox.gro -c -box 9.0 9.0 ${minZ}
+    gmx editconf -f step19_post.gro -o newbox.gro -c -box ${boxX} ${boxY} ${minZ}
     
     # 6. Prepare for next cycle
     cp newbox.gro box_fixed_${tag}.gro
