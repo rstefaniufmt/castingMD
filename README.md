@@ -9,7 +9,7 @@ casting_md/
 │
 ├── base_scripts/             # Main reusable scripts for evaporation
 │   ├── evaporate.py          # Python script that removes solvent above a cutting plane
-│   └── run_evaporate_loop_final.sh  # Bash script that performs multiple evaporation cycles
+│   └── run_evaporate_loop.sh  # Bash script that performs multiple evaporation cycles
 │
 ├── example/                  # Usage examples with different systems
 │   ├── PEG_PVA_313K/         # Simulation with PEG and PVA at 313 K
@@ -41,12 +41,13 @@ python3 evaporate.py in.gro in.top out.gro out.top PLANE
 - `out.top` — new topology with updated solvent count
 - `PLANE` — fraction of the Z-axis above which solvent will be removed (e.g., 0.9 means z > 90%)
 
-### 2. `run_evaporate_loop_final.sh` — Automated evaporation loop
+### 2. `run_evaporate_loop.sh` — Automated evaporation loop
 
 This script runs a **cycle-based simulation**, where in each cycle:
 - A short MD simulation is executed (e.g., 1 ns)
 - Solvent is removed above the `z` plane
 - Structure/topology is updated for the next cycle
+- A short re-minimization and re-equilibration is run for the next cycle
 
 **Main settings:**
 ```bash
@@ -61,10 +62,10 @@ plane=0.95          # height fraction of box for removal
 
 **Execution:**
 ```bash
-bash run_evaporate_loop_final.sh
+bash run_evaporate_loop.sh
 ```
 
-At the end, you will have multiple structures `stepN_last.gro` with varying levels of evaporation, suitable for final analysis of the film structure.
+At the end, you will have multiple structures `stepN_last.gro` with varying levels of evaporation, suitable for final analysis of the film structure. Moreover, you will have final_film.gro after final anneling. 
 
 ## 📁 Directory Usage
 
