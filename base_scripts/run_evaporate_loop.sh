@@ -15,7 +15,8 @@ CPT="${CPT:-npt.cpt}"                   # Temporary CPT file
 PYTHON=python3                # Python with MDAnalysis installed
 LOG_FILE="${LOG_FILE:-evaporate.log}"
 
-plane=1.00 #ONLY TO START THE VARIABLE
+#------ set solvent evaporation ration ------
+plane=$(awk -v n="${CYCLES}" 'BEGIN {printf "%.2f", (0.01)^(1/n)}')
 
 # ------------ MAIN LOOP ------------
 for ((i=0; i<CYCLES; i++)); do
@@ -89,15 +90,8 @@ for ((i=0; i<CYCLES; i++)); do
         fi 
     fi
 
-    # ------ Gradually adjust plane_frac ------
-    if   [ $i -le 5 ]; then plane=0.95
-    elif [ $i -le 10 ]; then plane=0.85
-    elif [ $i -le 12 ]; then plane=0.80
-    elif [ $i -le 14 ]; then plane=0.75
-    elif [ $i -le 16 ]; then plane=0.70
-    elif [ $i -le 18 ]; then plane=0.60
-    else                     plane=0.50
-    fi
+
+
 
     # 1. Prepare TPR
     if [[ $i -eq 0 ]]; then
@@ -184,16 +178,35 @@ rm -rf *#*
 # Final annealing
 echo "==== Simulation completed up to cycle $CYCLES, cooling system... ====" | tee -a "$LOG_FILE"
 
-CPT=step19_npt.cpt
-GRO=step19_npt.gro
-TOP=step19_post.top
+((ENDCYCLE=$CYCLES-1))
+CPT=step${ENDCYCLE}_npt.cpt
+GRO=step${ENDCYCLE}_npt.gro
+TOP=step${ENDCYCLE}_post.top
+
+echo "==== Using $CPT, $GRO and $TOP to cool the system... ====" | tee -a "$LOG_FILE"
 
 # 3. Determine Z-height of the system
 echo ">>> Calculating new box height..."
 zmax=$(tail -n 1 "$GRO" | awk '{print $3}')
 
 # 4. Safety check: ensure Z >= 2.75 nm (for default rlist of 1.2 nm)
-minZ=2.75
+
+    read boxX boxY boxZ <<< $(awk 'END {print $1, $2, $3}' "$GRO")
+    zmax=$(tail -n 1 "$GRO" | awk '{print $3}')
+
+    # 4. Safety check: ensure Z >= 2.75 nm (for default rlist of 1.2 nm)
+    
+    rlist_real=$(grep "rlist from" step${ENDCYCLE}_npt.log | tail -1 | awk '{print $11}')
+    buffer=0.3
+        
+   if [ -z "$rlist_real" ]; then
+       echo "[WARNING] Could not find rlist adjustment in log. Using TPR default value." | tee -a "$LOG_FILE"
+       rlist_real=$(gmx dump -s step${ENDCYCLE}_npt.tpr | grep "rlist" | head -1 | awk '{print $3}')
+   fi
+        
+    minZ=$(echo "$rlist_real * 2 + $buffer" | bc -l)
+
+
 zsafe=$(echo "$zmax < $minZ" | bc -l)
 if [ "$zsafe" -eq 1 ]; then
     echo ">>> Calculated Z-height ($zmax nm) is too small. Correcting to ${minZ} nm"
@@ -217,8 +230,8 @@ if [ "$zsafe" -eq 1 ]; then
     echo "  SOL molecules in .top: $n_sol_top"
 fi 
 
-gmx grompp -f md_anneling.mdp -c step19_npt.gro -t step19_npt.cpt -p step19_post.top -o filme_final.tpr -maxwarn 10 || { echo "Error during annealing"; exit 1; }
-gmx mdrun -deffnm filme_final -v || { echo "Error during annealing" | tee -a "$LOG_FILE"; exit 1; }
+gmx grompp -f md_anneling.mdp -c step${ENDCYCLE}_npt.gro -t step${ENDCYCLE}_npt.cpt -p step${ENDCYCLE}_post.top -o final_film.tpr -maxwarn 10 || { echo "Error during annealing"; exit 1; }
+gmx mdrun -deffnm final_film -v || { echo "Error during annealing" | tee -a "$LOG_FILE"; exit 1; }
 
 echo "==== Simulation finished successfully!! ====" | tee -a "$LOG_FILE"
 
