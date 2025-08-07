@@ -96,8 +96,8 @@ Stefani, R., & Luz, R. (2025). CastingMD: Solvent evaporation molecular dynamics
   publisher    = {Zenodo},
   version      = {1.0},
   doi          = {10.5281/zenodo.16728915},
-  url          = {https://doi.org/10.5281/zenodo.16728915}
-}
+  url          = {https://doi.org/10.5281/zenodo.16728915 }
+  }
 
 
 ---
