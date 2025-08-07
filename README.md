@@ -44,10 +44,10 @@ python3 evaporate.py in.gro in.top out.gro out.top PLANE
 ### 2. `run_evaporate_loop.sh` — Automated evaporation loop
 
 This script runs a **cycle-based simulation**, where in each cycle:
-- A short MD simulation is executed (e.g., 1 ns)
+- A short MD simulation is executed (e.g., 1-5 ns)
 - Solvent is removed above the `z` plane
 - Structure/topology is updated for the next cycle
-- A short re-minimization and re-equilibration is run for the next cycle
+- A short re-minimization and re-equilibration (100 ps NVT and 250-500 ps NPT) is run for the next cycle
 
 **Main settings:**
 ```bash
