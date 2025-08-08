@@ -1,0 +1,74 @@
+# This file was created Thu Aug  7 11:51:27 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/ricardo/dropbox_local/viviane/FOTO/4_md
+# Command line:
+#   gmx density -f filme_final.xtc -s filme_final.tpr -n index.ndx -o analises_filme/final/densidade_filme_FINAL.xvg -dens mass
+# gmx density is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "Partial density"
+@    xaxis  label "Average coordinate (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "PVA"
+   0.0257806          107.593
+   0.0773419          101.943
+    0.128903          103.716
+    0.180464          107.358
+    0.232026          109.013
+    0.283587          115.798
+    0.335148          124.238
+     0.38671          127.007
+    0.438271          121.694
+    0.489832          118.597
+    0.541393          116.481
+    0.592955          111.575
+    0.644516          111.827
+    0.696077           112.88
+    0.747638          112.143
+      0.7992          115.905
+    0.850761          117.848
+    0.902322          115.138
+    0.953883          112.913
+     1.00544          103.844
+     1.05701          100.968
+     1.10857          94.8549
+     1.16013          92.8599
+     1.21169          98.9354
+     1.26325          103.433
+     1.31481          103.477
+     1.36637          104.609
+     1.41793          106.701
+      1.4695          104.457
+     1.52106           103.73
+     1.57262          100.288
+     1.62418          100.641
+     1.67574          98.0601
+      1.7273          96.4717
+     1.77886           93.284
+     1.83043          94.3613
+     1.88199           95.412
+     1.93355          97.8206
+     1.98511          98.6187
+     2.03667          95.5516
+     2.08823          96.4512
+     2.13979          94.7159
+     2.19135          90.8732
+     2.24292          90.3807
+     2.29448           93.196
+     2.34604          95.6303
+      2.3976          100.787
+     2.44916          105.357
+     2.50072          109.912
+     2.55228          109.109

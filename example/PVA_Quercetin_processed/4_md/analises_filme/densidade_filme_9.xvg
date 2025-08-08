@@ -1,0 +1,74 @@
+# This file was created Thu Aug  7 11:50:51 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/ricardo/dropbox_local/viviane/FOTO/4_md
+# Command line:
+#   gmx density -f step9.xtc -s step9.tpr -n index.ndx -o analises_filme/densidade_filme_9.xvg -dens mass
+# gmx density is part of G R O M A C S:
+#
+# GRoups of Organic Molecules in ACtion for Science
+#
+@    title "Partial density"
+@    xaxis  label "Average coordinate (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "PVA"
+   0.0176051          133.511
+   0.0528152           133.61
+   0.0880254           131.08
+    0.123236            129.4
+    0.158446          138.661
+    0.193656          135.658
+    0.228866          133.405
+    0.264076          137.688
+    0.299286          136.837
+    0.334496          130.018
+    0.369707          135.092
+    0.404917          136.589
+    0.440127          140.675
+    0.475337          138.427
+    0.510547          139.412
+    0.545757          136.239
+    0.580967          138.337
+    0.616178          134.644
+    0.651388          141.372
+    0.686598          140.529
+    0.721808          143.155
+    0.757018          140.375
+    0.792228          136.359
+    0.827438          134.674
+    0.862649          134.784
+    0.897859          135.169
+    0.933069          129.867
+    0.968279          132.785
+     1.00349           132.71
+      1.0387          130.908
+     1.07391          135.452
+     1.10912          131.207
+     1.14433          120.163
+     1.17954          137.602
+     1.21475          132.779
+     1.24996          130.756
+     1.28517          132.945
+     1.32038          126.928
+     1.35559          125.837
+      1.3908          130.651
+     1.42601          131.419
+     1.46122          133.205
+     1.49643          141.735
+     1.53164          132.469
+     1.56685          137.793
+     1.60206           132.46
+     1.63727          128.316
+     1.67248          135.031
+     1.70769          135.864
+      1.7429          126.557

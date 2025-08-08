@@ -1,0 +1,74 @@
+# This file was created Thu Aug  7 11:51:10 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/ricardo/dropbox_local/viviane/FOTO/4_md
+# Command line:
+#   gmx density -f step24.xtc -s step24.tpr -n index.ndx -o analises_filme/densidade_filme_24.xvg -dens mass
+# gmx density is part of G R O M A C S:
+#
+# Giant Rising Ordinary Mutants for A Clerical Setup
+#
+@    title "Partial density"
+@    xaxis  label "Average coordinate (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "PVA"
+   0.0240643          97.0638
+   0.0721929          90.3779
+    0.120321          87.4261
+     0.16845          83.8657
+    0.216579          83.0605
+    0.264707          79.7444
+    0.312836          79.7531
+    0.360964          76.8125
+    0.409093          80.4086
+    0.457222          85.1231
+     0.50535          89.7283
+    0.553479          89.2232
+    0.601607          90.0833
+    0.649736          86.1323
+    0.697865          86.6123
+    0.745993          85.8507
+    0.794122          89.4641
+     0.84225          82.5366
+    0.890379          91.3189
+    0.938507          95.9334
+    0.986636           94.068
+     1.03476          101.152
+     1.08289          95.8772
+     1.13102          99.1424
+     1.17915          100.179
+     1.22728          98.4079
+     1.27541          97.2131
+     1.32354          105.766
+     1.37166          106.132
+     1.41979          110.014
+     1.46792            114.2
+     1.51605          114.784
+     1.56418          111.389
+     1.61231          116.639
+     1.66044          121.396
+     1.70856          120.466
+     1.75669          118.804
+     1.80482          116.284
+     1.85295          118.482
+     1.90108          118.953
+     1.94921          110.788
+     1.99734          113.404
+     2.04546          107.344
+     2.09359          108.238
+     2.14172           105.55
+     2.18985          97.8219
+     2.23798          95.4932
+     2.28611          89.8553
+     2.33424          93.4735
+     2.38237          90.6437

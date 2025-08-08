@@ -1,0 +1,74 @@
+# This file was created Thu Aug  7 11:50:47 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/ricardo/dropbox_local/viviane/FOTO/4_md
+# Command line:
+#   gmx density -f step4.xtc -s step4.tpr -n index.ndx -o analises_filme/densidade_filme_4.xvg -dens mass
+# gmx density is part of G R O M A C S:
+#
+# Great Red Oystrich Makes All Chemists Sane
+#
+@    title "Partial density"
+@    xaxis  label "Average coordinate (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "PVA"
+   0.0410022          115.124
+    0.123007          116.994
+    0.205011          118.422
+    0.287015          120.034
+     0.36902          114.093
+    0.451024           105.49
+    0.533029          104.777
+    0.615033          94.7078
+    0.697037          90.6555
+    0.779042           84.557
+    0.861046          77.4741
+    0.943051          68.9902
+     1.02505          62.2228
+     1.10706          57.3575
+     1.18906          49.5955
+     1.27107          46.4725
+     1.35307          37.8772
+     1.43508          36.1342
+     1.51708          33.1755
+     1.59909          30.0247
+     1.68109          23.9998
+     1.76309          19.7987
+      1.8451          17.5109
+      1.9271          14.3288
+     2.00911           12.442
+     2.09111          9.65741
+     2.17312          6.59562
+     2.25512          6.01148
+     2.33713          5.69384
+     2.41913          5.69605
+     2.50113          9.07983
+     2.58314          11.2331
+     2.66514           12.566
+     2.74715          20.3695
+     2.82915          23.5651
+     2.91116          31.2706
+     2.99316          33.7948
+     3.07516          41.9933
+     3.15717          48.5603
+     3.23917          52.2583
+     3.32118          62.8695
+     3.40318          70.1728
+     3.48519           78.441
+     3.56719          82.2549
+      3.6492          89.9821
+      3.7312           96.492
+      3.8132          99.7199
+     3.89521           107.44
+     3.97721          111.463
+     4.05922          112.065

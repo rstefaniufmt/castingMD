@@ -1,0 +1,292 @@
+==== Starting cycle 0 ====
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+[WARNING] Could not find rlist adjustment in log. Using TPR default value.
+==== Starting cycle 1 ====
+>>> Calculating new box height...
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+==== Starting cycle 2 ====
+>>> Calculating new box height...
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+==== Starting cycle 3 ====
+>>> Calculating new box height...
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+==== Starting cycle 4 ====
+>>> Calculating new box height...
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+==== Starting cycle 5 ====
+>>> Calculating new box height...
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+==== Starting cycle 6 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.89528 nm) is too small. Correcting to 2.988 nm
+>>> Applying new Z box height = 2.988 nm
+[INFO] Checking consistency after cycle 6
+  Atoms in .gro: 17494
+  SOL molecules in .top: 5535
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.89717 nm) is too small. Correcting to 2.988 nm
+>>> Applying new Z box height = 2.988 nm
+[INFO] Checking consistency after cycle 6
+  Atoms in .gro: 14665
+  SOL molecules in .top: 4592
+==== Starting cycle 7 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.47017 nm) is too small. Correcting to 2.984 nm
+>>> Applying new Z box height = 2.984 nm
+[INFO] Checking consistency after cycle 7
+  Atoms in .gro: 14665
+  SOL molecules in .top: 4592
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.44011 nm) is too small. Correcting to 2.984 nm
+>>> Applying new Z box height = 2.984 nm
+[INFO] Checking consistency after cycle 7
+  Atoms in .gro: 12277
+  SOL molecules in .top: 3796
+==== Starting cycle 8 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.05726 nm) is too small. Correcting to 2.974 nm
+>>> Applying new Z box height = 2.974 nm
+[INFO] Checking consistency after cycle 8
+  Atoms in .gro: 12277
+  SOL molecules in .top: 3796
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.06369 nm) is too small. Correcting to 2.974 nm
+>>> Applying new Z box height = 2.974 nm
+[INFO] Checking consistency after cycle 8
+  Atoms in .gro: 10417
+  SOL molecules in .top: 3176
+==== Starting cycle 9 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (1.77485 nm) is too small. Correcting to 2.928 nm
+>>> Applying new Z box height = 2.928 nm
+[INFO] Checking consistency after cycle 9
+  Atoms in .gro: 10417
+  SOL molecules in .top: 3176
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.75866 nm) is too small. Correcting to 2.928 nm
+>>> Applying new Z box height = 2.928 nm
+[INFO] Checking consistency after cycle 9
+  Atoms in .gro: 8785
+  SOL molecules in .top: 2632
+==== Starting cycle 10 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (1.53281 nm) is too small. Correcting to 2.9 nm
+>>> Applying new Z box height = 2.9 nm
+[INFO] Checking consistency after cycle 10
+  Atoms in .gro: 8785
+  SOL molecules in .top: 2632
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.50644 nm) is too small. Correcting to 2.9 nm
+>>> Applying new Z box height = 2.9 nm
+[INFO] Checking consistency after cycle 10
+  Atoms in .gro: 7489
+  SOL molecules in .top: 2200
+==== Starting cycle 11 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (1.87783 nm) is too small. Correcting to 2.88 nm
+>>> Applying new Z box height = 2.88 nm
+[INFO] Checking consistency after cycle 11
+  Atoms in .gro: 7489
+  SOL molecules in .top: 2200
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.29069 nm) is too small. Correcting to 2.88 nm
+>>> Applying new Z box height = 2.88 nm
+[INFO] Checking consistency after cycle 11
+  Atoms in .gro: 6418
+  SOL molecules in .top: 1843
+==== Starting cycle 12 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (1.71950 nm) is too small. Correcting to 2.936 nm
+>>> Applying new Z box height = 2.936 nm
+[INFO] Checking consistency after cycle 12
+  Atoms in .gro: 6418
+  SOL molecules in .top: 1843
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.45978 nm) is too small. Correcting to 2.936 nm
+>>> Applying new Z box height = 2.936 nm
+[INFO] Checking consistency after cycle 12
+  Atoms in .gro: 5500
+  SOL molecules in .top: 1537
+==== Starting cycle 13 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (1.94861 nm) is too small. Correcting to 2.98 nm
+>>> Applying new Z box height = 2.98 nm
+[INFO] Checking consistency after cycle 13
+  Atoms in .gro: 5500
+  SOL molecules in .top: 1537
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.46313 nm) is too small. Correcting to 2.98 nm
+>>> Applying new Z box height = 2.98 nm
+[INFO] Checking consistency after cycle 13
+  Atoms in .gro: 4729
+  SOL molecules in .top: 1280
+==== Starting cycle 14 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.09849 nm) is too small. Correcting to 2.984 nm
+>>> Applying new Z box height = 2.984 nm
+[INFO] Checking consistency after cycle 14
+  Atoms in .gro: 4729
+  SOL molecules in .top: 1280
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.58390 nm) is too small. Correcting to 2.984 nm
+>>> Applying new Z box height = 2.984 nm
+[INFO] Checking consistency after cycle 14
+  Atoms in .gro: 4039
+  SOL molecules in .top: 1050
+==== Starting cycle 15 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.02641 nm) is too small. Correcting to 2.972 nm
+>>> Applying new Z box height = 2.972 nm
+[INFO] Checking consistency after cycle 15
+  Atoms in .gro: 4039
+  SOL molecules in .top: 1050
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.53288 nm) is too small. Correcting to 2.972 nm
+>>> Applying new Z box height = 2.972 nm
+[INFO] Checking consistency after cycle 15
+  Atoms in .gro: 3523
+  SOL molecules in .top: 878
+==== Starting cycle 16 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.40612 nm) is too small. Correcting to 2.976 nm
+>>> Applying new Z box height = 2.976 nm
+[INFO] Checking consistency after cycle 16
+  Atoms in .gro: 3523
+  SOL molecules in .top: 878
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.87350 nm) is too small. Correcting to 2.976 nm
+>>> Applying new Z box height = 2.976 nm
+[INFO] Checking consistency after cycle 16
+  Atoms in .gro: 3043
+  SOL molecules in .top: 718
+==== Starting cycle 17 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.41835 nm) is too small. Correcting to 3.002 nm
+>>> Applying new Z box height = 3.002 nm
+[INFO] Checking consistency after cycle 17
+  Atoms in .gro: 3043
+  SOL molecules in .top: 718
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.00010 nm) is too small. Correcting to 3.002 nm
+>>> Applying new Z box height = 3.002 nm
+[INFO] Checking consistency after cycle 17
+  Atoms in .gro: 2674
+  SOL molecules in .top: 595
+==== Starting cycle 18 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.60584 nm) is too small. Correcting to 3.006 nm
+>>> Applying new Z box height = 3.006 nm
+[INFO] Checking consistency after cycle 18
+  Atoms in .gro: 2674
+  SOL molecules in .top: 595
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.17518 nm) is too small. Correcting to 3.006 nm
+>>> Applying new Z box height = 3.006 nm
+[INFO] Checking consistency after cycle 18
+  Atoms in .gro: 2410
+  SOL molecules in .top: 507
+==== Starting cycle 19 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.45025 nm) is too small. Correcting to 3.004 nm
+>>> Applying new Z box height = 3.004 nm
+[INFO] Checking consistency after cycle 19
+  Atoms in .gro: 2410
+  SOL molecules in .top: 507
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (1.95920 nm) is too small. Correcting to 3.004 nm
+>>> Applying new Z box height = 3.004 nm
+[INFO] Checking consistency after cycle 19
+  Atoms in .gro: 2128
+  SOL molecules in .top: 413
+==== Starting cycle 20 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.74563 nm) is too small. Correcting to 3.016 nm
+>>> Applying new Z box height = 3.016 nm
+[INFO] Checking consistency after cycle 20
+  Atoms in .gro: 2128
+  SOL molecules in .top: 413
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.21276 nm) is too small. Correcting to 3.016 nm
+>>> Applying new Z box height = 3.016 nm
+[INFO] Checking consistency after cycle 20
+  Atoms in .gro: 1891
+  SOL molecules in .top: 334
+==== Starting cycle 21 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.54861 nm) is too small. Correcting to 3.010 nm
+>>> Applying new Z box height = 3.010 nm
+[INFO] Checking consistency after cycle 21
+  Atoms in .gro: 1891
+  SOL molecules in .top: 334
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.19500 nm) is too small. Correcting to 3.010 nm
+>>> Applying new Z box height = 3.010 nm
+[INFO] Checking consistency after cycle 21
+  Atoms in .gro: 1696
+  SOL molecules in .top: 269
+==== Starting cycle 22 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.52450 nm) is too small. Correcting to 3.010 nm
+>>> Applying new Z box height = 3.010 nm
+[INFO] Checking consistency after cycle 22
+  Atoms in .gro: 1696
+  SOL molecules in .top: 269
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.08677 nm) is too small. Correcting to 3.010 nm
+>>> Applying new Z box height = 3.010 nm
+[INFO] Checking consistency after cycle 22
+  Atoms in .gro: 1543
+  SOL molecules in .top: 218
+==== Starting cycle 23 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.62499 nm) is too small. Correcting to 3.012 nm
+>>> Applying new Z box height = 3.012 nm
+[INFO] Checking consistency after cycle 23
+  Atoms in .gro: 1543
+  SOL molecules in .top: 218
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.05771 nm) is too small. Correcting to 3.012 nm
+>>> Applying new Z box height = 3.012 nm
+[INFO] Checking consistency after cycle 23
+  Atoms in .gro: 1429
+  SOL molecules in .top: 180
+==== Starting cycle 24 ====
+>>> Calculating new box height...
+>>> Calculated Z-height (2.60116 nm) is too small. Correcting to 3.010 nm
+>>> Applying new Z box height = 3.010 nm
+[INFO] Checking consistency after cycle 24
+  Atoms in .gro: 1429
+  SOL molecules in .top: 180
+Removing solvent (plane_frac=0.83)...
+>>> Calculating new box height...
+>>> Calculated Z-height (2.21968 nm) is too small. Correcting to 3.010 nm
+>>> Applying new Z box height = 3.010 nm
+[INFO] Checking consistency after cycle 24
+  Atoms in .gro: 1369
+  SOL molecules in .top: 160
+==== Simulation completed up to cycle 25, cooling system... ====
+==== Simulation finished successfully!! ====

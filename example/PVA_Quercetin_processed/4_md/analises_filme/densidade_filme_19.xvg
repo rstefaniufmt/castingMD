@@ -1,0 +1,74 @@
+# This file was created Thu Aug  7 11:51:06 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/ricardo/dropbox_local/viviane/FOTO/4_md
+# Command line:
+#   gmx density -f step19.xtc -s step19.tpr -n index.ndx -o analises_filme/densidade_filme_19.xvg -dens mass
+# gmx density is part of G R O M A C S:
+#
+# Glycine aRginine prOline Methionine Alanine Cystine Serine
+#
+@    title "Partial density"
+@    xaxis  label "Average coordinate (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "PVA"
+   0.0215431          122.055
+   0.0646292          120.874
+    0.107715          121.822
+    0.150802          123.431
+    0.193888          127.778
+    0.236974          116.906
+     0.28006          123.512
+    0.323146          126.218
+    0.366232          126.134
+    0.409318          123.384
+    0.452405          122.769
+    0.495491            120.8
+    0.538577          123.914
+    0.581663          115.976
+    0.624749          121.409
+    0.667835          113.747
+    0.710922          112.062
+    0.754008           110.61
+    0.797094          111.122
+     0.84018          107.001
+    0.883266           108.14
+    0.926352          108.646
+    0.969438          110.422
+     1.01252          103.573
+     1.05561          105.179
+      1.0987            102.6
+     1.14178          105.378
+     1.18487          101.815
+     1.22796           103.87
+     1.27104          100.809
+     1.31413           100.05
+     1.35721           104.83
+      1.4003          98.2748
+     1.44339          102.826
+     1.48647           99.811
+     1.52956          103.219
+     1.57264          106.389
+     1.61573           99.446
+     1.65882          106.275
+      1.7019          101.427
+     1.74499          103.754
+     1.78808          98.8721
+     1.83116          102.269
+     1.87425          97.9691
+     1.91733          101.323
+     1.96042          102.345
+     2.00351          102.239
+     2.04659          108.144
+     2.08968           115.45
+     2.13276          113.051

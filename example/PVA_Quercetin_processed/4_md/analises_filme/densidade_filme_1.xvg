@@ -1,0 +1,74 @@
+# This file was created Thu Aug  7 11:51:01 2025
+# Created by:
+#                     :-) GROMACS - gmx density, 2024.2 (-:
+# 
+# Executable:   /usr/local/gromacs/bin/gmx
+# Data prefix:  /usr/local/gromacs
+# Working dir:  /home/ricardo/dropbox_local/viviane/FOTO/4_md
+# Command line:
+#   gmx density -f step1.xtc -s step1.tpr -n index.ndx -o analises_filme/densidade_filme_1.xvg -dens mass
+# gmx density is part of G R O M A C S:
+#
+# God Rules Over Mankind, Animals, Cosmos and Such
+#
+@    title "Partial density"
+@    xaxis  label "Average coordinate (nm)"
+@    yaxis  label "Density (kg m\S-3\N)"
+@TYPE xy
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "PVA"
+   0.0686669          85.4978
+    0.206001           92.464
+    0.343335          99.5957
+    0.480668          95.7677
+    0.618002          97.8111
+    0.755336          101.349
+     0.89267          100.218
+        1.03          91.8435
+     1.16734           86.802
+     1.30467          75.7432
+     1.44201          63.9437
+     1.57934          52.8377
+     1.71667           39.952
+     1.85401          30.9714
+     1.99134          21.8274
+     2.12867          12.1898
+     2.26601          7.78374
+     2.40334           4.9221
+     2.54068          2.40977
+     2.67801         0.573892
+     2.81534        0.0955429
+     2.95268                0
+     3.09001                0
+     3.22734                0
+     3.36468                0
+     3.50201                0
+     3.63935                0
+     3.77668                0
+     3.91401        0.0318149
+     4.05135         0.164817
+     4.18868         0.395463
+     4.32602         0.658365
+     4.46335          1.43242
+     4.60068           2.1674
+     4.73802          2.64129
+     4.87535          3.69217
+     5.01268          4.96617
+     5.15002          7.30937
+     5.28735          10.4921
+     5.42469          14.5499
+     5.56202          18.7154
+     5.69935          24.1527
+     5.83669          29.8406
+     5.97402          36.6171
+     6.11136          49.4745
+     6.24869          58.7106
+     6.38602          62.8811
+     6.52336          70.6511
+     6.66069          75.1836
+     6.79802          81.2656
