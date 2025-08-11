@@ -216,10 +216,10 @@ if [ "$zsafe" -eq 1 ]; then
     
     # 5. Redefine box with new height
     echo ">>> Applying new Z box height = ${zmax} nm"
-    gmx editconf -f step19_post.gro -o newbox.gro -c -box ${boxX} ${boxY} ${minZ}
+    gmx editconf -f step${ENDCYCLE}_post.gro -o newbox.gro -c -box ${boxX} ${boxY} ${minZ}
     
     # 6. Prepare for next cycle
-    cp newbox.gro box_fixed_${tag}.gro
+    cp newbox.gro box_fixed_${ENDCYCLE}.gro
     cp newbox.gro ${GRO}
     rm -rf newbox.gro
     
