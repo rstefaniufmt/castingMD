@@ -47,7 +47,7 @@ This script runs a **cycle-based simulation**, where in each cycle:
 - A short MD simulation is executed (e.g., 1-5 ns). Please edit md.mdp file to set the desired MD simulation time (default is 1ns)
 - Solvent is removed above the `z` plane
 - Structure/topology is updated for the next cycle
-- A short re-minimization and re-equilibration (100 ps NVT and 250-500 ps NPT) is run for the next cycle. Please, edit nvt_eq.mdp and npt_eq.mdp configuration files to set the desired time for temperature and pressure re-equilibration for your system. 
+- A short re-minimization and re-equilibration (100 ps NVT and 250-500 ps NPT) is run for the next cycle. Please, edit nvt_eq.mdp and npt_eq.mdp configuration files to set the desired time for temperature and pressure re-equilibration for your system (default is 100 ps and 500 ps for NVT and NPT, respectively). 
 
 **Main settings:**
 ```bash
