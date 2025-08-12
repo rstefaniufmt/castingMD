@@ -13,7 +13,8 @@ GRO="${GRO:-npt.gro}"                  # Final structure from NPT and solvatatio
 TPR="${TPR:-md.tpr}" 
 CPT="${CPT:-npt.cpt}"                   # Temporary CPT file
 PYTHON=python3                # Python with MDAnalysis installed
-LOG_FILE="${LOG_FILE:-evaporate.log}"
+LOG_FILE="${LOG_FILE:-evaporate.log}" #Logging file
+OUT_FILM="${OUT_FILM:-final_film}" #Final film name
 
 #------ set solvent evaporation ration ------
 plane=$(awk -v n="${CYCLES}" 'BEGIN {printf "%.2f", (0.01)^(1/n)}')
@@ -230,8 +231,8 @@ if [ "$zsafe" -eq 1 ]; then
     echo "  SOL molecules in .top: $n_sol_top"
 fi 
 
-gmx grompp -f md_anneling.mdp -c step${ENDCYCLE}_npt.gro -t step${ENDCYCLE}_npt.cpt -p step${ENDCYCLE}_post.top -o final_film.tpr -maxwarn 10 || { echo "Error during annealing"; exit 1; }
-gmx mdrun -deffnm final_film -v || { echo "Error during annealing" | tee -a "$LOG_FILE"; exit 1; }
+gmx grompp -f md_anneling.mdp -c step${ENDCYCLE}_npt.gro -t step${ENDCYCLE}_npt.cpt -p step${ENDCYCLE}_post.top -o ${OUT_FILM}.tpr -maxwarn 10 || { echo "Error during annealing"; exit 1; }
+gmx mdrun -deffnm ${OUT_FILM} -v || { echo "Error during annealing" | tee -a "$LOG_FILE"; exit 1; }
 
 echo "==== Simulation finished successfully!! ====" | tee -a "$LOG_FILE"
 
