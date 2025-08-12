@@ -57,7 +57,8 @@ MDP=md.mdp          # simulation parameters
 TOP=film.top        # initial topology
 GRO=npt.gro         # initial structure
 PYTHON=python3      # Python with MDAnalysis installed
-plane=0.95          # height fraction of box for removal
+LOG_FILE=evaporate.log #name of execution LOG file
+OUT_FILM=final_film # name of the final dried film 
 ```
 
 **Execution:**
