@@ -1,0 +1,36 @@
+; Include forcefield parameters
+#include "../gromos54a7_atb.ff/forcefield.itp"
+
+
+
+
+;#ifdef WAT_LEMAT
+; Include water topology
+;#include "water.itp"
+;#else
+; Include water topology
+#include "../gromos54a7_atb.ff/spc.itp"
+;#endif
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+
+
+; ethanol topology
+#include "acetic_acid.itp"
+
+
+
+[ system ]
+; Name
+water:acetic acid 2%
+
+[ molecules ]
+; Compound        #mols
+ACOH               4
+SOL              196

@@ -1,0 +1,37 @@
+ Include forcefield parameters
+#include "../gromos54a7_atb.ff/forcefield.itp"
+
+
+
+; Include chain topologies
+#include "chitosan.itp"
+#include "glycerol.itp"
+
+
+; Include water topology
+#include "../gromos54a7_atb.ff/spc.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+;include solvent topology
+#include "acetic_acid.itp"
+
+
+; Include topology for ions
+#include "../gromos54a7_atb.ff/ions.itp"
+
+[ system ]
+; Name
+chitosan Film  in water:acetic acid 2%
+
+[ molecules ]
+; Compound        #mols
+CHTO                 20
+GLOH                100
+ACOH          22
+SOL          289
