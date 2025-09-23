@@ -60,7 +60,7 @@ PYTHON=python3      # Python with MDAnalysis installed
 LOG_FILE=evaporate.log #name of execution LOG file
 OUT_FILM=final_film # name of the final dried film 
 ```
-These setting are example toy settins and should NOT be used for production
+These settings are example toy settings and should NOT be used for production
 
 **Execution:**
 ```bash
