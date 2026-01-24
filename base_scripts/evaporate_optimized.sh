@@ -75,7 +75,8 @@ check_mdp_files() {
     
     if [[ ${#missing_files[@]} -gt 0 ]]; then
         log_error "Missing MDP files: ${missing_files[*]}"
-
+    fi    
+}
 # ----------------------------------------------------------------------------
 # Function: get_box_dimensions
 # Description: Extracts box dimensions from .gro file
@@ -364,3 +365,4 @@ main() {
 
 # Execute main program
 main "$@"
+
