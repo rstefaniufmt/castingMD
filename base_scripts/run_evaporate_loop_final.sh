@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This is deprecated and is here for historical reasons
 
 # ------------ CONFIGURAÇÃO ------------
 SEG_NS=1                      # Tempo de cada ciclo (ns)
