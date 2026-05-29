@@ -27,7 +27,7 @@ CastingMD is a computational workflow that automates molecular dynamics (MD) sim
 
 # Statement of Need
 
-Solvent evaporation during solution casting is a critical but poorly understood determinant of polymer film structure and properties. Experimental observations show that drying rate, solvent type, and polymer-solvent interactions influence final film morphology, mechanical properties, barrier function, and bioactivity [@ahmed2017; @podshivalov2017]. Molecular dynamics (MD) simulations offer unprecedented atomistic insight into this process, yet existing approaches present substantial barriers to adoption:
+Solvent evaporation during solution casting is a critical but poorly understood determinant of polymer film structure and properties. Experimental observations show that drying rate, solvent type, and polymer-solvent interactions influence final film morphology, mechanical properties, barrier function, and bioactivity [@ahmed2017]. Molecular dynamics (MD) simulations offer unprecedented atomistic insight into this process, yet existing approaches present substantial barriers to adoption:
 
 1. **Manual scripting burden**: Researchers typically assemble films using static packing tools (e.g., PACKMOL) or docking methods, which ignore solvent dynamics entirely. Simulating realistic evaporation requires manual coordination of repeated MD cycles, solvent removal, re-equilibration, and file management—a task prone to error and requiring significant coding expertise.
 
@@ -105,14 +105,14 @@ Both systems converged to stable, compact final conformations with reduced free 
 
 | Feature | GenEvaPa [@harris2023] | PyThinFilm [@stroet2023] | PACKMOL [@martinez2009] | CastingMD |
 |---------|----------|----------|---------|-----------|
-| Automated evaporation workflow | ✓ | ✓ | ✗ | ✓ |
-| Z-axis-only evaporation | ✗ | ✗ | N/A | ✓ |
-| Mixed-solvent support | ✗ | ✓ | Limited | ✓ |
-| Vacuum deposition | ✗ | ✓ | ✗ | ✗ |
-| Arbitrary polymer systems | ✗ | ✓ | ✓ | ✓ |
-| Open-source, active maintenance | ✓ | ✓ | ✓ | ✓ |
-| No expert GROMACS required | ✗ | ✓ | ✓ | ✓ |
-| Automatic re-equilibration | Partial | ✓ | ✗ | ✓ |
+| Automated evaporation workflow | + | + | - | + |
+| Z-axis-only evaporation | - | - | N/A | + |
+| Mixed-solvent support | - | + | Limited | + |
+| Vacuum deposition | - | + | - | - |
+| Arbitrary polymer systems | - | + | + | + |
+| Open-source, active maintenance | + | + | + | + |
+| No expert GROMACS required | - | + | + | + |
+| Automatic re-equilibration | Partial | + | - | + |
 
 **GenEvaPa** provides similar automation but is restricted to thin-film systems and uses multidirectional evaporation. **PyThinFilm** is a sophisticated framework supporting both vacuum deposition and solution processing with explicit solvent-vacuum interfaces and computational acceleration methods; however, it does not restrict evaporation to the z-axis and is optimized for organic semiconductors (OLEDs/OSCs). **PACKMOL** is powerful for system construction but does not simulate evaporation dynamics. **CastingMD** fills a complementary niche by emphasizing directional (z-axis only) evaporation, automatic z-box adjustment, and accessibility for solution-cast polymer-based systems (food science, biomaterials, bioactive formulations).
 
