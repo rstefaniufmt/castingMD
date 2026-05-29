@@ -17,7 +17,7 @@ affiliations:
     name: Department of Chemistry, Federal University of Ouro Preto, Ouro Preto, MG, Brazil
   - index: 2
     name: Graduate Program in Materials Science, Campus Araguaia, Federal University of Mato Grosso, Barra do Garças, MT, Brazil
-date: 21 May 2026
+date: 29 May 2026
 bibliography: paper.bib
 ---
 
