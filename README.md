@@ -280,6 +280,30 @@ Automated, modular bash script that orchestrates the entire simulation.
 bash evaporate_optimized.sh
 ```
 
+### 4. `initial_setup.sh` — Initial System Generator
+
+Automates the creation of the initial simulation box (`npt.gro`) required by the evaporation workflow. It reads a `setup.conf` file to dynamically insert molecules, solvate the system, and generate the `film.top` topology. It then runs Energy Minimization, NVT, and NPT equilibrations.
+
+> [!WARNING]
+> **Solvent System Compatibility**
+> This script is designed to solvate with a **SINGLE SOLVENT** (defaulting to SPC water). For binary or ternary solvent systems, you must manually edit this script and adapt Step 3 (`gmx solvate`). Using mixed solvents requires a pre-equilibrated solvent box, which due to the complexity of creating such a box, cannot be automated with a simple script and usually demands intermediate to advanced knowledge of GROMACS.
+
+**Usage:**
+```bash
+bash initial_setup.sh
+```
+
+**Configuration (`setup.conf` format):**
+Create a `setup.conf` file in the same directory defining the `BOX` dimensions and the number of each molecule to insert. The script will look for corresponding `.gro` and `.itp` files matching the keys.
+```ini
+# Box dimensions in nm (X Y Z)
+BOX = 10 10 10
+
+# Molecules and their quantities
+PVA = 1
+PEG = 1
+```
+
 ## 📝 Examples
 
 ### Example 1: Standard Film Casting (PVA + Quercetin at 308 K)
