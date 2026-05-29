@@ -1,0 +1,16 @@
+tolerance 2.0
+filetype pdb
+output water90_acetone10_box.pdb
+
+# Acetone
+structure acetone.pdb
+  number 1000
+  inside box 0. 0. 0. 80. 80. 80.
+end structure
+
+# water
+structure water.pdb
+  number 9000
+  inside box 0. 0. 0. 80. 80. 80.
+end structure
+

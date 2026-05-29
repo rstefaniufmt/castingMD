@@ -10,23 +10,26 @@ This repository contains automated scripts for performing molecular dynamics (MD
 casting_md/
 │
 ├── base_scripts/              # Main reusable scripts for evaporation
+│   ├── evaporate.conf         # Configuration file
 │   ├── evaporate.py           # Python script for solvent removal
-│   ├── prepare_evaporation.py # MDP file generator
 │   ├── evaporate_optimized.sh # Automated workflow (modular version)
-│   └── evaporate.conf         # Configuration file
+│   ├── prepare_evaporation.py # MDP file generator
+│   └── run_evaporate_loop_final.sh # Legacy loop script
 │
 ├── example/                   # Usage examples with different systems
+│   ├── chitosan/              # Simulation with Chitosan
 │   ├── PEG_PVA_313K/          # Simulation with PEG and PVA at 313 K
-│   └── PVA_quercetin_308K/    # Simulation with PVA + quercetin at 308 K
+│   ├── PVA_quercetin__casting_308K/ # Simulation with PVA + quercetin at 308 K
+│   └── PVA_Quercetin_processed/ # Processed PVA + quercetin files
 │
 ├── mdp/                       # .mdp parameter files (legacy templates)
 │   ├── initial/               # Minimization, NVT, NPT initial stages
 │   └── evaporate/             # Parameters for evaporation cycles
 │
-├── gromos54a7_atb.ff/         # GROMOS 54a7 force field from ATB
-│
-└── docs/                      # Documentation
-    └── tutorial.pdf           # Basic tutorial
+├── CHANGELOG.md               # Version history and bug fixes
+├── LICENSE                    # Project license
+├── README.md                  # Main documentation
+└── tutorial.pdf               # Basic tutorial
 ```
 
 ## 📋 Overview
@@ -161,6 +164,7 @@ The script will:
 | `GRO` | npt.gro | Initial structure |
 | `CPT` | npt.cpt | Initial checkpoint |
 | `LOG_FILE` | evaporate.log | Simulation log |
+| `GMX_LOG_FILE` | gromacs_output.log | Log file for GROMACS commands |
 | `OUT_FILM` | final_film | Final output name |
 | `PYTHON` | python3 | Python executable |
 
@@ -226,7 +230,7 @@ evaporate.log                   # Complete workflow log
 
 ### 1. `evaporate.py` — Solvent Removal Script
 
-Uses **MDAnalysis** to identify and remove solvent residues above a Z-axis threshold.
+Uses **MDAnalysis** to identify and remove solvent residues above a Z-axis threshold. Supports complex solvent mixtures (binary/ternary) by reading specific evaporation rates from an optional `solvent.conf` file (e.g., `SOL = 1.0`, `ACTN = 1.4`).
 
 **Usage:**
 ```bash
@@ -425,17 +429,18 @@ python3 prepare_evaporation.py
 
 ## 🔄 Resuming Simulations
 
-The workflow automatically detects completed cycles by checking for `step{i}_last.gro` files:
+The workflow features a **Smart Resume Capability**. If a simulation is abruptly interrupted (e.g., power outage or manual cancellation), the script will automatically detect existing checkpoint files (`.cpt`) and resume the exact step (Minimization, NVT, NPT, or MD) using `gmx mdrun -cpi -append`. It will skip already completed cycles and substeps seamlessly.
 
 ```bash
-# If simulation was interrupted at cycle 5
-# Simply re-run the script - it will skip cycles 0-5
+# If simulation was interrupted
+# Simply re-run the script - it will pick up exactly where it left off!
 bash evaporate_optimized.sh
 ```
 
 To restart from scratch:
 ```bash
-rm step*_last.gro
+# Remove all generated files from previous runs
+rm -f step* box_fixed* final_film* gromacs_output.log evaporate.log
 bash evaporate_optimized.sh
 ```
 
@@ -500,13 +505,18 @@ For questions, issues, or suggestions:
 
 ## 🎯 Version History
 
-### Version 2.0 (Current)
+### Version 2.1 (Current)
+- Smart resume capability (mid-step resumption using GROMACS checkpoints `.cpt`)
+- Dedicated GROMACS command logging (`GMX_LOG_FILE`)
+- Support for binary/ternary solvent mixtures via `solvent.conf` evaporation rates
+
+### Version 2.0
 - Modular, function-based workflow
 - Automatic MDP file generation
 - Independent time parameters for each simulation phase
 - Comprehensive error handling
 - Improved documentation
-- Resume capability
+- Basic cycle skipping
 
 ### Version 1.0 (Legacy)
 - Original evaporation workflow
